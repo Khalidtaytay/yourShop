@@ -1,7 +1,7 @@
 {
   "name": "your-shop",
   "version": "0.1.0",
-  "homepage": "https://Khalidtaytay.github.io/yourShop",
+  "homepage": "https://Khalidtaytay.github.io/yourshop",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
