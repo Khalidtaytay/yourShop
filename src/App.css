@@ -1,38 +1,297 @@
-.App {
-  text-align: center;
+*{
+   
+    box-sizing: border-box;
+}
+body{
+
+    margin: 0;
+}
+:root{
+    --peramry-color:#FFD43F;
+    --secondary-color:#E39136;
+    --Nav-color:#201b08  ;
+    --price-font-familly :"Roboto Mono", monospace;
+}
+/*Nav bar*/
+.Nav-bar{
+    position: fixed;
+    width: 100%;
+    height: 8%;
+    z-index: 1;
+    background: var(--Nav-color);
+    top: 0;
+    border-bottom: 1px gray solid;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-inline: 40px;
+    color: white;
+}
+span{
+    color: var(--peramry-color);
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.totalNumber{
+    background: red;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    bottom: -5px;
+    right: -5px;
+}
+.menu{
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+}
+.menu li{
+    margin-inline: 10px;
+}
+img{
+    width: 50%;
+}
+.NavCards{
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    transition: .15s;
+}
+.NavCards:hover{
+    border: 4px var(--peramry-color) solid;
+    border-radius: 50%;
+}
+.Nav-bar-logo{
+    cursor: pointer;
+}
+.NavCards li{
+    color: var(--peramry-color);
+    list-style: none;
+    font-size: larger;
+    cursor: pointer;
+    position: relative;
+}
+/*Store*/
+.background{
+    position: relative;
+    width: 100%;
+    margin-top: 40px;
+    height: 70dvh;
+    background: var(--peramry-color);
+    background: url(background.jpg);
+    background-size: 100%;
+    background-position: center top;
+    background-repeat: no-repeat;
+}
+.store{
+    padding-top: 7%;
+    padding-inline: 2.5%;
+}
+.store-category{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.filtre-btns{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.h2-category{
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    color: gr;
+}
+.filtre-btns i{
+    padding-inline: 5%;
+}
+.filtre-btns button{
+    width: 100px;
+    height: 30px;
+    display: flex;
+    margin-inline: 20px;
+    justify-content: space-around;
+    align-items: center;
+    border: 2px var(--secondary-color) solid;
+    outline: none;
+    border-radius: 10px;
+    color: white;
+    background: var(--secondary-color);
+    cursor: pointer;
+    
+}
+.filtre-btns button:hover{
+    color: var(--Nav-color);
+    background: white;
+    font-weight: bold;
+}
+.items-container{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+h3{
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.item{
+    max-width: 350px;
+    min-height: 280px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+    padding: 10px;
+    position: relative;
+}
+.add-to-card{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.item button{
+    bottom: 10px;
+    position: absolute;
+    display: flex;
+    justify-content: space-around;
+    border: 2px var(--secondary-color) solid;
+    outline: none;
+    border-radius: 10px;
+    color: white;
+    background: var(--secondary-color);
+    cursor: pointer;
+}
+.item button:hover{
+    color: var(--Nav-color);
+    background: white;
+    font-weight: bold;
+}
+.item-infos{
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    padding-inline: 10px;
+    width: 100%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/*cratSelected*/
+.CardsPage{
+    height: 100%;
+    width: 40%;
+    position: fixed;
+    overflow: auto;
+    top: 48px;
+    right: 0;
+    z-index: 11;
+    background: white;
+    border-left: 1px gray solid;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.516);
+    animation: cardePage .5s ease-in-out forwards;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+@keyframes cardePage{
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0%);
+    }
 }
-
-.App-link {
-  color: #61dafb;
+.cratSelected{
+    min-height: 200px;
+    max-width: 400px;
+    border: 1px gray solid;
+    border-radius: 5px;
+    margin: 10px;
+    position: relative;
 }
+.cardInfos{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.number-card{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: var(--secondary-color);
+    color: white;
+    border-radius: 50%;
+}
+.price{
+    font-family: var(--price-font-familly);
+    color: gray;
+}
+/*cards container*/
+.h1-total{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    font-family: "Poppins", sans-serif;
+}
+#total{
+    color: gray;
+    font-family: var(--price-font-familly);
+    margin-inline: 2%;
+}
+.price-btn button{
+    border: 2px var(--secondary-color) solid;
+    outline: none;
+    border-radius: 10px;
+    color: white;
+    background: var(--secondary-color);
+    cursor: pointer;
+}
+.price-btn button:hover{
+    color: var(--Nav-color);
+    background: white;
+    font-weight: bold;
+}
+.cratSelected-h3{
+    font-size: 15px;
+}
+.cratSelected-img{
+    width: 25%;
+}
+@media(max-width:1160px){
+    .CardsPage{
+        width: 80%;
+    }
+}
+@media(max-width:565px){
+    .CardsPage{
+        width: 90%;
+        font-size: 10px;
+    }
+    .items-container{
+        justify-content: center;
+    }
+    .background{
+        height: 20dvh;
+    }
+    .filtre-btns button{
+        margin: 5px;
+        height: 20px;
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+    }
+    .h2-category{
+        font-size: 10px;
+    }
 }
