@@ -7,8 +7,8 @@ export const Context = createContext();
 export function ContextProvider(props) {
     function getDefaultCart() {
         let cart = {};
-        for (let i = 0; i <= data.length; i++) {
-            cart[data[i].id] = 0
+        for (let i = 0; i < data.length; i++) {
+            cart[data[i].id] = 0;
         }
         return cart;
     }
